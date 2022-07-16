@@ -167,6 +167,7 @@ trait NodeTrait
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getAttribute($attributeName)
     {
         if (!is_null($this->attributes)) {
@@ -185,6 +186,7 @@ trait NodeTrait
      *
      * @see getAttribute
      */
+    #[\ReturnTypeWillChange]
     public function hasAttribute($attributeName)
     {
         if (!is_null($this->attributes)) {
