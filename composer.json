@@ -39,7 +39,7 @@
         "ext-xml": "*",
         "ext-mbstring": "*",
         "psr/log": "^1.0",
-        "masterminds/html5": "2.7.x-dev",
+        "masterminds/html5": "2.7.x-dev@dev",
         "league/uri": "^6.4"
     },
     "require-dev": {
