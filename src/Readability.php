@@ -9,8 +9,8 @@ use fivefilters\Readability\Nodes\DOM\DOMText;
 use fivefilters\Readability\Nodes\NodeUtility;
 use Psr\Log\LoggerInterface;
 use \Masterminds\HTML5;
+use League\Uri\BaseUri;
 use League\Uri\Http;
-use League\Uri\UriResolver;
 
 /**
  * Class Readability.
@@ -808,9 +808,9 @@ class Readability
         //    return $pathBase . substr($uri, 2);
         //}
 
-        $baseUri = Http::createFromString($pathBase);
-        $relativeUri = Http::createFromString($uri);
-        return (string)UriResolver::resolve($relativeUri, $baseUri);
+        $baseUri = Http::new($pathBase);
+        $relativeUri = Http::new($uri);
+        return (string)BaseUri::from($uri)->resolve($relativeUri)->baseUri();
 
         // Standard relative URI; add entire path. pathBase already includes a
         // trailing "/".
